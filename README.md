@@ -7,6 +7,8 @@
 - Go to https://www.heroku.com/ and sigup for a free account.
 - Go here and download the heroku-cli for your OS and install it
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up
+- You now need to log in to heroku. Use the following command in your terminal to do so
+$ heroku login
 - Create your heroku app using the following command
 $ heroku create
 - To run your app on heroku
@@ -18,7 +20,3 @@ $ git push heroku master
 - Put to your git hub repository
 - Run the following command to update on heroku
 $ git push heroku master
-
-
-
-
