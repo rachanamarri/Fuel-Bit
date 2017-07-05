@@ -15,6 +15,8 @@
     <link rel="stylesheet" type="text/css" href="/vendor/offcanvas/demo.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/offcanvas/menu_elastic.css" />
+    <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="/vendor/offcanvas/snap.svg-min.js"></script>
 </head>
 
 <body>
@@ -22,45 +24,43 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <!-- Add your site or application content here -->
-    <div class="content-wrap">
-        <div class="content">
-            <!-- all HTML goes here -->
-            <br>
-            <br>
-            <br>
-            <br>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h1>Welcome to Fuel Bit</h1>
-                        <p>The single solution to all your vehicle problems</p>
+    <div class="container-offcanvas">
+            <div class="menu-wrap">
+                <nav class="menu">
+                    <div class="icon-list">
+                        <a href="/dashboard"><i class="fa fa-fw fa-newspaper-o"></i><span>Dashboard</span></a>
+                        <a href="/maps"><i class="fa fa-fw fa-star-o"></i><span>Maps</span></a>
+                        <a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Notifications</span></a>
+                        <a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
+                        <a href="#"><i class="fa fa-fw fa-comment-o"></i><span>History</span></a>
+                        <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
                     </div>
-                    <div class="col-sm-6">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember Me
-                                </label>
-                            </div>
-                            <a href="/dashboard" type="submit" class="btn btn-default">Submit</a>
-                        </form>
-                    </div>
+                </nav>
+                <button class="close-button" id="close-button">Close Menu</button>
+                <div class="morph-shape" id="morph-shape" data-morph-open="M-1,0h101c0,0,0-1,0,395c0,404,0,405,0,405H-1V0z">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 800" preserveAspectRatio="none">
+                        <path d="M-1,0h101c0,0-97.833,153.603-97.833,396.167C2.167,627.579,100,800,100,800H-1V0z"/>
+                    </svg>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- /content-wrap -->
+            <button class="menu-button" id="open-button">Open Menu</button>
+            <div class="content-wrap">
+                <div class="content">
+                    <!-- all HTML goes here -->
+
+                    <div class="container">
+                        <div class="row">
+                            <h1>this is the dashboard</h1>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /content-wrap -->
+        </div><!-- /container -->
     <script src="/js/vendor/jquery-1.12.0.min.js"></script>
     <script src="/vendor/bootstrap/bootstrap.min.js"></script>
     <script src="/vendor/handlebars.js"></script>
+    <script src="/vendor/offcanvas/classie.js"></script>
+    <script src="/vendor/offcanvas/main3.js"></script>
     <script src="/js/plugins.js"></script>
     <script src="/js/main.js"></script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
