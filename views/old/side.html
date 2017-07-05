@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>FuelBit</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  
+.letter {
+  color: #fff;
+  font-family: Avenir Next, Helvetica Neue, Helvetica, Tahoma, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+}
+.letter span {
+  display: inline-block;
+  position: relative;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 500;
+          perspective: 500;
+  -webkit-font-smoothing: antialiased;
+}
+.letter span::before,
+.letter span::after {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -1px;
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+  content: attr(data-text);
+}
+.letter span::before {
+  z-index: 1;
+  color: rgba(0,0,0,0.2);
+  -webkit-transform: scale(1.1, 1) skew(0deg, 20deg);
+          transform: scale(1.1, 1) skew(0deg, 20deg);
+}
+.letter span::after {
+  z-index: 2;
+  color: #684da3;
+  text-shadow: -1px 0 1px #684da3, 1px 0 1px rgba(0,0,0,0.8);
+  -webkit-transform: rotateY(-40deg);
+          transform: rotateY(-40deg);
+}
+.letter span:hover::before {
+  -webkit-transform: scale(1.1, 1) skew(0deg, 5deg);
+          transform: scale(1.1, 1) skew(0deg, 5deg);
+}
+.letter span:hover::after {
+  -webkit-transform: rotateY(-10deg);
+          transform: rotateY(-10deg);
+}
+.letter span + span {
+  margin-left: 0.3em;
+}
+@media (min-width: 20em) {
+  .letter {
+    font-size: 2em;
+  }
+  .letter span::before,
+  .letter span::after {
+    display: block;
+  }
+}
+@media (min-width: 30em) {
+  p {
+    font-size: 3em;
+  }
+}
+@media (min-width: 40em) {
+  p {
+    font-size: 5em;
+  }
+}
+@media (min-width: 60em) {
+  p {
+    font-size: 8em;
+  }
+}
+html,
+.head {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #684da3;
+}
+
+
+
+
+
+
+#search {
+    float: right;
+    margin-top: 9px;
+    width: 250px;
+}
+
+.search {
+    padding: 5px 0;
+    width: 230px;
+    height: 30px;
+    position: relative;
+    left: 10px;
+    float: left;
+    line-height: 22px;
+}
+
+    .search input {
+        position: absolute;
+        width: 0px;
+        float: Left;
+        margin-left: 210px;
+        -webkit-transition: all 0.7s ease-in-out;
+        -moz-transition: all 0.7s ease-in-out;
+        -o-transition: all 0.7s ease-in-out;
+        transition: all 0.7s ease-in-out;
+        height: 30px;
+        line-height: 18px;
+        padding: 0 2px 0 2px;
+        border-radius:1px;
+    }
+
+        .search:hover input, .search input:focus {
+            width: 200px;
+            margin-left: 0px;
+        }
+
+.btn {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 5px;
+    border-radius:1px;
+}
+
+
+
+
+  
+.circle {
+  margin: 36px;
+  display: inline-block;
+  padding: 16px;
+  text-align: center;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #1d2087;
+}
+
+.circle::before,
+.circle::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.circle,
+.circle::before,
+.circle::after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.circle {
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border: 2px solid #5c5eae;
+  color: #5c5eae;
+  line-height: 50px;
+  overflow: hidden;
+}
+
+.circle:hover {
+  color: #fff;
+}
+.circle::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-transform: scale(.5);
+  transform: scale(.5);
+}
+.circle:hover::after {
+  background: #5c5eae;
+  border-radius: 50%;
+  -webkit-transform: scale(.9);
+  transform: scale(.9);
+}
+
+
+.circle a {
+  text-decoration: none;
+  color: #1d2087;
+}
+
+.circle h2 {
+  font-size: 60px;
+}
+
+.circle h2 small {
+  color: #1d2087;
+}
+
+.circle p {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+
+.banner_animate h1 {
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #316196;
+    margin: 0;
+    padding: 90px 0 25px 0;
+    transform-origin: 50% 100%;
+    text-shadow: 2px 2px 2px #333;
+     
+    animation-duration: 3s;
+    animation-name: fade;
+    animation-timing-function: cubic-bezier(.71,.55,.62,1.57);
+}
+.banner_animate a {
+    font-family: Cambria, Cochin, serif;
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #A6D2FF;
+    transition: background-color .2s ease-out;
+}
+.banner_animate a:hover {
+    background-color: #EEE;
+}
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a><img src="gaya3.jpg" class="img-circle" alt="Cinque Terre" width="150" height="150"></a>
+  <a href="#">About Us</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+  <a href="#">Settings</a>
+  <a href="#">logout</a>
+</div>
+
+
+
+
+
+<div style=" margin-bottom: 100px; background-color: #515962; height: 65px;  position: fixed;width: 100%;">
+
+<span style="font-size:30px;cursor:pointer; position: fixed; margin-top: 10px; margin-left: 20px;" onclick="openNav()">&#9776; </span>
+
+
+
+
+  <div class="row" style="margin-top: 14px;">
+
+
+
+         <div class="pull-right">
+                 <img src="bell.png" style="height: 35px; margin-right: 55px;">
+           </div>
+
+        <div class="search pull-right" style="position: relative;  margin-right: 60px;">
+           <input type="text" class="form-control input-sm" maxlength="64" placeholder="Number" />
+           <button type="submit" class="btn btn-primary btn-sm" style="background-color: #74BADF; border-radius: 10px;">vehicle number</button>
+         </div>
+  </div>
+
+
+</div>
+
+<div>
+
+<img src="bg.jpg" style="width: 100%;height: 250px; position: absolute;opacity: 0.8;margin-top: 65px;">
+
+
+
+<div style=" font-size: 50px; text-align: center;padding-top: 120px;">
+<p aria-label="CodePen" class="letter" >
+  <span data-text="F">F</span><span data-text="U">U</span><span data-text="E">E</span><span data-text="L">L</span><span data-text="B">B</span><span data-text="I">I</span><span data-text="T">T</span>
+</p>
+</div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row" style="margin-top: 40px;">
+    <section class="section_0">
+      <div class="col-sm-4" style="float: left;position: sticky;">
+        <div class="circle circle1">
+          <a href="#section_1"><a href="petrol.html"><img src="p.png"> </a></a> 
+        </div>
+        <div style="margin-left: 20px; margin-top: -40px;"><h2 style="font-family: segoe script">Petrol Pumps<h2></div>
+      </div>
+      <div class="col-sm-4" style="float: left;">
+        <div class="circle circle2">
+          <a href="#section_2"><a href="mileage.html">
+            <img src="m1.png" class="img-circle" alt="Cinque Terre" height="130"> 
+           </a>
+        </div>
+        <div style="margin-left: 20px; margin-top: -40px;"><h2 style="font-family: segoe script">Mileage stats<h2></div>
+      </div>
+      <div class="col-sm-4" style="float: left;">
+        <div class="circle circle3">
+          <a href="#section_3">
+         
+         <img src="r.png">   
+         </a>
+        </div>
+        <div style="margin-left: 30px; margin-top: -40px;"><h2 style="font-family: segoe script">Reminder<h2</div>
+      </div>
+      
+    </section>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+     
+</body>
+</html> 
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
